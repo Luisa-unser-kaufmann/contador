@@ -4,18 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contador</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(10, 95, 121);
+        }
+        h1{
+            color: rgb(152, 202, 202);
+        }
+        p{
+            color: rgb(44, 160, 144);
+            padding: 30px;
+            font-size: 40px;
+            
+        }
+        button{
+            background-color: rgb(38, 92, 122);
+            border: none;
+            font-size: 20px;
+
+        }
+        button:hover{
+            background-color: rgb(19, 45, 59);
+            
+                }
+    </style>
 </head>
 <body>
     <h1>contador</h1>
     <p>0</p>
-    <button onclick="mais()">mais</button>
+    <button onclick="mais()">+</button>
+    <button onclick="menos()">-</button>
     <script>
-        function  mais(){
-            numero++
-            mostrarNaTela()
+          var numero= 0
+
+        function mais(){
+            numero++;
+            mostrarNaTela();
         }
+        function menos(){
+            numero--;
+            mostrarNaTela();
+        }
+
         function mostrarNaTela(){
-            const p =document.querySelector("p").innerText = numero
+            const p = document.querySelector("p").innerText=numero;
         }
     </script>
 </body>
