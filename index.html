@@ -3,62 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contador</title>
+    <title>Contador</title>
     <style>
-        body{
+        body {
             text-align: center;
             background-color: rgb(10, 95, 121);
         }
-        h1{
+
+        h1 {
             color: rgb(152, 202, 202);
         }
-        p{
+
+        p {
             color: rgb(44, 160, 144);
             padding: 30px;
             font-size: 40px;
             
         }
-        button{
+
+        button {
             background-color: rgb(38, 92, 122);
             border: none;
             font-size: 20px;
 
         }
-        button:hover{
+
+        button:hover {
             background-color: rgb(19, 45, 59);
-            
-                }
-                .container{
-                    display: flex;
-                }
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .item {
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
-   
-    <section class="container">
-        <div>
-    <h1>contador</h1>
-    <p>0</p>
-    <button onclick="mais()">+
-    </button>
-    <button onclick="menos()">-</button>
-    <script>
-          var numero= 0
+    <div class="container">
 
-        function mais(){
-            numero++;
-            mostrarNaTela();
-        }
-        function menos(){
-            numero--;
-            mostrarNaTela();
-        }
+        <div class="item">
+            <h1>contador 1</h1>
+            <p id="p1">0</p>
+            <button onclick="mais(1)">+</button>
+            <button onclick="menos(1)">-</button>
+        </div>
 
-        function mostrarNaTela(){
-            const p = document.querySelector("p").innerText=numero;
-        }
-    </script>
+        <div class="item">
+            <h1>contador 2</h1>
+            <p id="p2">0</p>
+            <button onclick="mais(2)">+</button>
+            <button onclick="menos(2)">-</button>
+        </div>
+
     </div>
-</section>
+<script>
+    
+    let numero1 = 0
+    let numero2 = 0
+
+    function mais(num) {
+        if (num === 1) {
+            numero1++
+        }
+        if (num === 2) {
+            numero2++
+        }
+        mostrarNaTela(num);
+    }
+    
+    function menos(num) {
+        numero1--;
+        mostrarNaTela(num);
+    }
+
+    function mostrarNaTela(num) {
+        const p1 = document.querySelector("#p1");
+        const p2 = document.querySelector("#p2");
+
+        if (num === 1) {
+            p1.innerText = numero1
+        }
+        if (num === 2) {
+            p2.innerText = numero2
+        }
+    }
+
+    mostrarNaTela(1)
+    mostrarNaTela(2)
+</script>
 </body>
 </html>
